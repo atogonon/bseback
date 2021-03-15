@@ -90,7 +90,7 @@ const seed = async () => {
 
 seed()
   .catch(err => {
-    console.error(red('Seeding error!'))
+    console.error('Seeding error!')
     console.error(err)
     db.close()
   })
