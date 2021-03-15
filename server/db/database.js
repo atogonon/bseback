@@ -14,7 +14,11 @@ console.log(chalk.yellow('Opening database connection'))
 
 // create the database instance that can be used in other database files
 const db = new Sequelize(process.env.DATABASE_URL || `postgres://localhost:5432/${databaseName}`, {
-  logging: false // so we don't see all the SQL queries getting made
+  logging: false, // so we don't see all the SQL queries getting made
+  dialect: 'postgres',
+  dialectOptions: {
+    ssl: true
+  }
 })
 
 module.exports = db
