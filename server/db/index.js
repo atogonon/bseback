@@ -1,9 +1,4 @@
-'use strict'
-
 const db = require('./database')
-const Team = require('./models/Team')
+require('./models')
 
-module.exports = {
-  db,
-  Team
-}
+module.exports = db
