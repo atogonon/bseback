@@ -10,14 +10,10 @@ const pkg = require('../../package.json')
 
 const databaseName = pkg.name + (process.env.NODE_ENV === 'test' ? '-test' : '')
 
-let DATABASE_URL
-if (process.env.DATABASE_URL) { DATABASE_URL = `${process.env.DATABASE_URL}?sslmode=require`}
-else {DATABASE_URL=`postgres://localhost:5432/${databaseName}`}
-
 console.log(chalk.yellow('Opening database connection'))
 
 // create the database instance that can be used in other database files
-const db = new Sequelize(DATABASE_URL, {
+const db = new Sequelize(process.env.DATABASE_URL || `postgres://localhost:5432/${databaseName}`, {
   logging: false // so we don't see all the SQL queries getting made
 })
 
