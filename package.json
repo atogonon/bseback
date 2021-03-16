@@ -22,8 +22,5 @@
     "seed": "node seed.js"
   },
   "author": "",
-  "license": "ISC",
-  "engines": {
-    "node": "10.16"
-  }
+  "license": "ISC"
 }
