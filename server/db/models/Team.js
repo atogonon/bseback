@@ -170,4 +170,10 @@ module.exports = db.define('team', {
       notEmpty: true
     }
   },
+  imgURL: {
+    type: Sequelize.STRING,
+  },
+  color: {
+    type: Sequelize.STRING,
+  },
 })
