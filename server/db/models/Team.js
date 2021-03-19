@@ -170,6 +170,27 @@ module.exports = db.define('team', {
       notEmpty: true
     }
   },
+  ortg: {
+    type: Sequelize.FLOAT,
+    allowNull: false,
+    validate: {
+      notEmpty: true
+    }
+  },
+  drtg: {
+    type: Sequelize.FLOAT,
+    allowNull: false,
+    validate: {
+      notEmpty: true
+    }
+  },
+  pace: {
+    type: Sequelize.FLOAT,
+    allowNull: false,
+    validate: {
+      notEmpty: true
+    }
+  },
   imgURL: {
     type: Sequelize.STRING,
   },
