@@ -43,9 +43,7 @@ bbrefData.splice(2, 1)
 bbrefData.unshift(nets)
 bbrefData.unshift(league)
 
-for (let i=0; i<bbrefData.length; i++) {
-  let team=bbrefData[i]
-
+bbrefData.forEach(team => {
   let obj={
     team: team[1],
     g: team[2],
@@ -76,7 +74,9 @@ for (let i=0; i<bbrefData.length; i++) {
   }
 
   seedTeams.push(obj)
-}
+})
+
+
 
 const seed = async () => {
   await db.sync({force: true})
