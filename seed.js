@@ -86,8 +86,6 @@ bbrefData.forEach(team => {
 const seed = async () => {
   await db.sync({force: true})
 
-  await db.sync({force:true})
-
   await Promise.all(seedTeams.map(team => {
     return Team.create(team)
   }))
